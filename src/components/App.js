@@ -41,7 +41,7 @@ class App extends Component {
     {
       if(this.cityList[i].country === 'India')
       {
-        this.items.push(<li key={`location${++j}`}>this.cityList[i].name</li>);
+        this.items.push(<li key={`location${++j}`}>{this.cityList[i].name}</li>);
       }
     }
   }
@@ -49,7 +49,8 @@ class App extends Component {
   render() {
     return (
       <div id="main">
-        { this.items }
+        <ol> { this.items }</ol>
+       
       </div>
     )
   }
