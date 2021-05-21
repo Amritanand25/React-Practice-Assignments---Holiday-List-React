@@ -44,6 +44,13 @@ class App extends Component {
         this.items.push(<li key={`location${++j}`}>{this.cityList[i].name}</li>);
       }
     }
+    for(let i=0; i<this.cityList.length;i++)
+    {
+      if(this.cityList[i].country !== 'India')
+      {
+        this.items.push(<li key={`location${++j}`}>{this.cityList[i].name}</li>);
+      }
+    }
   }
   
   render() {
