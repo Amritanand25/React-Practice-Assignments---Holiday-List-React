@@ -3,6 +3,7 @@ import React, { Component, useState } from "react";
 import '../styles/App.css';
 
 class App extends Component {
+  items = [];
   constructor(props) {
     super(props)
 
@@ -35,12 +36,20 @@ class App extends Component {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ]
-  }
 
+    for(let i=0; i<this.cityList.length;i++)
+    {
+      if(this.cityList[i].country === 'India')
+      {
+        this.items.push(<li>{this.cityList[i].name}</li>);
+      }
+    }
+  }
+  
   render() {
     return (
       <div id="main">
-        {/* Do not remove the main div */}
+        { this.items }
       </div>
     )
   }
