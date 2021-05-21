@@ -36,12 +36,12 @@ class App extends Component {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ]
-
+    let j=0;
     for(let i=0; i<this.cityList.length;i++)
     {
       if(this.cityList[i].country === 'India')
       {
-        this.items.push(<li>{this.cityList[i].name}</li>);
+        this.items.push(<li key={`location${++j}`}>this.cityList[i].name</li>);
       }
     }
   }
