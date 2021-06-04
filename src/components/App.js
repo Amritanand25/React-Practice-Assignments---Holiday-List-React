@@ -36,28 +36,31 @@ class App extends Component {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ]
-    let j=0;
-    for(let i=0; i<this.cityList.length;i++)
-    {
-      if(this.cityList[i].country === 'India')
-      {
-        this.items.push(<li key={`location${++j}`}>{this.cityList[i].name}</li>);
-      }
-    }
-    for(let i=0; i<this.cityList.length;i++)
-    {
-      if(this.cityList[i].country !== 'India')
-      {
-        this.items.push(<li key={`location${++j}`}>{this.cityList[i].name}</li>);
-      }
-    }
+    this.cities = [
+      "Goa(India)",
+      "Amsterdam(Netherlands)",
+      "New York(USA)",
+      "Darjeeling(India)",
+      "Tokyo(Japan)",
+      "Lonavala(India)"
+    ];
   }
+
+  keyName = "location";
   
   render() {
     return (
       <div id="main">
-        <ol> { this.items }</ol>
        
+        <ol>
+          {
+            this.cities.map((city, index) => {
+            if (city.includes("India") ) {
+              this.keyName = this.keyName + index;
+              return( <li key={this.keyName}>{city}</li>);
+            }
+          })}
+        </ol>
       </div>
     )
   }
